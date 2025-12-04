@@ -1,0 +1,381 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #0f0f0f;
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* -----------------------------------
+   HEADER + BRAND SECTION
+----------------------------------- */
+header {
+    width: 100%;
+    padding: 20px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(10, 10, 10, 0.7);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2000;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand img {
+    width: 55px;
+}
+
+.brand h3 {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    color: #ffe5e5;
+}
+
+.brand span {
+    font-size: 0.72rem;
+    color: #ccc;
+}
+
+/* -----------------------------------
+   NAVIGATION
+----------------------------------- */
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background-color: #0c0c0c;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    box-shadow: #ff8b8f 0px 0px 8px -3px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #e0bdbd;
+    font-size: 0.95rem;
+    transition: 0.3s;
+
+
+}
+
+nav ul li a:hover {
+    color: #ff4d5a;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: rgba(179, 53, 61, 0.308);
+}
+
+/* Buttons */
+.login-btn, .signup-btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.login-btn {
+    background: transparent;
+    border: 1px solid #ff4d5a;
+    color: #ff4d5a;
+    box-shadow: #ffcbd0 0px 0px 8px -3px;
+    border-radius: 08em;
+}
+
+.signup-btn {
+    background: transparent;
+    border: 1px solid #ff4d5a;
+    color: #ff4d5a;
+    box-shadow: #eccfd1 0px 0px 12px -3px;
+    border-radius: 08em;
+}
+
+.login-btn:hover {
+    background: #ff4d5a;
+    color: #fff;
+    border-radius: 08px;
+}
+
+.signup-btn:hover {
+    background: #ff6b77;
+    color: #fff;
+    border-radius: 08px;
+}
+
+
+
+/* -----------------------------------
+   HAMBURGER MENU
+----------------------------------- */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 26px;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+}
+
+/* -----------------------------------
+   HERO SECTION (Full Background)
+----------------------------------- */
+.hero-section {
+    width: 100%;
+    height: 60vh;
+    background: linear-gradient(rgba(10, 10, 10, 0.45), rgba(10, 10, 10, 0.45)),
+                url("https://www.edudel.nic.in/sose/static/media/humanities-banner.0668f664a4d12c6bcab5.png")
+                center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 90px;
+    position: relative;
+}
+
+.hero-section::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.6);
+}
+
+.hero-section h1 {
+    position: relative;
+    z-index: 5;
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #ffdddf;
+    word-spacing: 2px;
+    text-align: center;
+}
+
+/* -----------------------------------
+   MAIN SECTIONS
+----------------------------------- */
+main {
+    padding: 40px 20px;
+}
+
+section {
+    background: #161616;
+    padding: 25px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+}
+
+section h2 {
+    color: #ff4d5a;
+    margin-bottom: 10px;
+}
+
+/* -----------------------------------
+   FOOTER
+----------------------------------- */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    background: #111;
+    border-top: 1px solid #333;
+}
+
+/* -----------------------------
+   POP-UP HOVER CARD
+------------------------------ */
+.hover-card {
+    background: rgba(255, 255, 255, 0.06);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    transition: 0.35s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0px rgba(255, 255, 255, 0.1);
+    transform: translateY(0) scale(1);
+}
+
+.hover-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 18px rgba(255, 77, 90, 0.35);
+    border-color: rgba(255, 77, 90, 0.7);
+}
+
+/* Optional: style the headings inside */
+.hover-card h3 {
+    color: #ff4d5a;
+    margin-top: 10px;
+}
+
+.hover-card p {
+    color: #ccc;
+}
+
+
+.intro-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+    margin-top: 40px;
+}
+
+/* Card Base Style */
+.card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 28px;
+    border-radius: 18px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: 0.35s ease;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* Icons */
+.card .icon {
+    font-size: 40px;
+    color: #ff4d5a;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Pop + Glow on Hover */
+.card:hover {
+    transform: translateY(-12px) scale(1.04);
+    border-color: #ff4d5a;
+    box-shadow: 0 0 25px rgba(255, 77, 90, 0.55);
+}
+
+/* Neon Border Animation */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(135deg, transparent, #ff4d5a, transparent);
+    background-size: 300%;
+    animation: borderGlow 4s linear infinite;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+@keyframes borderGlow {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 200% 200%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Text */
+.card h3 {
+    color: #ff4d5a;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #ccc;
+    font-size: 0.95rem;
+}
+
+/* Shine/Light Sweep Animation */
+.card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.25),
+        transparent
+    );
+    transform: skewX(-20deg);
+    transition: 0.5s;
+}
+
+.card:hover::after {
+    left: 120%;
+}
+
+/* 3D Tilt Effect on Hover */
+.tilt {
+    transition: transform 0.4s ease;
+}
+
+.tilt:hover {
+    transform: perspective(600px) rotateX(8deg) rotateY(-8deg) scale(1.05);
+}
+
+/* Responsive Fix */
+@media (max-width: 500px) {
+    .card:hover {
+        transform: scale(1.03);
+    }
+    .tilt:hover {
+        transform: scale(1.03);
+    }
+}
+
+@media (max-width: 850px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 250px;
+        background: rgba(10, 10, 10, 0.95);
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+        height: 100vh;
+        flex-direction: column;
+        padding: 30px;
+        gap: 20px;
+        transform: translateX(100%);
+        transition: 0.4s ease;
+    }
+
+    nav ul li {
+        display: block;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}

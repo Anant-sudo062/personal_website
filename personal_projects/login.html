@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+        color: white;
+    }
+
+    .container {
+        width: 350px;
+        height: 430px;
+        perspective: 1200px;
+    }
+
+    .card {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.8s ease-in-out;
+    }
+
+    .flip {
+        transform: rotateY(180deg);
+    }
+
+    .side {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        background: #111;
+        border: 1px solid #b80000;
+        border-radius: 18px;
+        padding: 30px;
+        box-sizing: border-box;
+        box-shadow: 0 0 20px rgba(255,0,0,0.2);
+    }
+
+    h2 {
+        color: #ff2b2b;
+        margin-bottom: 20px;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        background: black;
+        border: 1px solid #444;
+        border-radius: 10px;
+        color: white;
+        outline: none;
+        transition: 0.3s;
+    }
+
+    input:focus {
+        border-color: #ff0000;
+        box-shadow: 0 0 8px rgba(255,0,0,0.5);
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 10px;
+        background: #d10000;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #ff0000;
+        box-shadow: 0 0 10px rgba(255,0,0,0.5);
+    }
+
+    .toggle {
+        margin-top: 15px;
+        text-align: center;
+        font-size: 14px;
+        color: #bbb;
+    }
+
+    .toggle span {
+        color: #ff3b3b;
+        cursor: pointer;
+    }
+
+    /* Back Side (Signup) */
+    .back {
+        transform: rotateY(180deg);
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card" id="card">
+        
+        <!-- LOGIN PAGE -->
+        <div class="side front">
+            <h2>Login</h2>
+
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+
+            <button>Login</button>
+
+            <div class="toggle">
+                Don't have an account? <span onclick="flipCard()">Sign Up</span>
+            </div>
+        </div>
+
+        <!-- SIGNUP PAGE -->
+        <div class="side back">
+            <h2>Sign Up</h2>
+
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+
+            <button>Create Account</button>
+
+            <div class="toggle">
+                Already have an account? <span onclick="flipCard()">Login</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function flipCard() {
+        document.getElementById("card").classList.toggle("flip");
+    }
+</script>
+
+</body>
+</html>
